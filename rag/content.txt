@@ -1,0 +1,335 @@
+# Pharmaceutical Distributor Information
+
+## Company Profile
+COMPANY: MediPharma Distribution
+LOCATION: 123 Healthcare Drive, Pharmaville, PH 12345
+ESTABLISHED: 2005
+LICENSE: FDA-12345-D, expires 2025-12-31
+CERTIFICATIONS: ISO 9001:2015, Good Distribution Practice (GDP), VAWD (Verified-Accredited Wholesale Distributors)
+CONTACT: orders@medipharma.example.com, +1-555-123-4567
+WEBSITE: www.medipharma-distribution.example.com
+HOURS: Monday-Friday, 8:00 AM - 6:00 PM ET
+SERVICES: Pharmaceutical distribution, Cold chain logistics, Drop shipping, Regulatory compliance assistance
+
+## About Us
+MediPharma Distribution is a leading pharmaceutical distributor serving pharmacies, hospitals, and healthcare facilities throughout the region. Founded in 2005, we've established a reputation for reliability, compliance, and exceptional service. Our state-of-the-art warehouse and logistics network ensure timely delivery of critical medications while maintaining strict quality control standards. We are committed to the highest ethical standards and regulatory compliance in all our operations.
+
+## Service Areas
+We currently service the following regions:
+- Northeast Region (all states)
+- Mid-Atlantic Region (all states)
+- Midwest Region (select states: Ohio, Michigan, Illinois, Indiana, Wisconsin)
+- Southeast Region (Florida, Georgia, North Carolina, South Carolina)
+
+## Key Contacts
+- Customer Service: service@medipharma.example.com, +1-555-123-4567
+- New Accounts: accounts@medipharma.example.com, +1-555-234-5678
+- Order Processing: orders@medipharma.example.com, +1-555-345-6789
+- Regulatory Affairs: compliance@medipharma.example.com, +1-555-456-7890
+- Returns Department: returns@medipharma.example.com, +1-555-567-8901
+
+# Ordering Process
+
+## How to Place an Order
+1. ONLINE: Log in here with you vendor id and place the order
+
+## Required Information for Orders
+- Your orgnization name
+- Purchase order number
+- Contact person and phone number
+- Shipping address
+- Products (item numbers, quantities)
+- Requested delivery date (if applicable)
+
+## Order Processing Timeline
+- Orders received before 2:00 PM ET are processed the same business day
+- Orders received after 2:00 PM ET are processed the next business day
+- Expedited processing is available for emergency orders
+
+## Shipping Options
+- Standard Ground (2-3 business days): Free for orders over $500
+- Expedited (Next business day): $25 flat fee
+- Same-Day (Limited areas): $75 flat fee
+- Cold Chain Shipping: Additional $15 per cooler
+
+## Payment Information
+- TERMS: Net 30 days for established accounts
+- METHODS: Check, ACH transfer, credit card (Visa, MasterCard, American Express)
+- CREDIT LIMITS: Based on account history and credit evaluation
+- LATE PAYMENTS: Subject to 1.5% interest per month after due date
+
+# Account Management
+
+## Vendor Compliance Program
+All vendors must comply with our Vendor Compliance Program, which includes:
+- Regular quality assurance checks
+- Adherence to GDP practices
+- Proper documentation for all transactions
+- Compliance with all applicable federal and state regulations
+
+# Product Categories
+1. Analgesics and Pain Management
+2. Antibiotics
+3. Cardiovascular Medications
+4. Antidiabetic Medications
+5. Respiratory Medications
+6. Gastrointestinal Medications
+7. Central Nervous System Medications
+8. Dermatological Products
+9. Ophthalmic Preparations
+10. Vitamins and Supplements
+
+# Products In Stock
+
+## Paracetamol (Tylenol)
+PRODUCT_ID: 1
+GENERIC_NAME: Paracetamol
+BRAND_NAME: Tylenol
+ACTIVE_INGREDIENTS: Acetaminophen
+PHARMACOLOGICAL_CLASS: Analgesic and antipyretic
+ATC_CODES: N02BE01
+INDICATIONS: Mild to moderate pain, fever
+CONTRAINDICATIONS: Severe liver impairment
+MECHANISM_OF_ACTION: Inhibits prostaglandin synthesis in the CNS
+DOSAGE_FORM: Tablet
+STRENGTH: 500 mg
+ROUTE_OF_ADMINISTRATION: Oral
+PACKAGING: Blister pack of 20 tablets
+SYNONYMS: Acetaminophen
+DESCRIPTION: White, round tablet for pain relief and fever reduction
+MANUFACTURER: Johnson & Johnson
+STORAGE_CONDITIONS: Store below 25°C in a dry place
+PRICE_PER_UNIT: $0.15
+AVAILABILITY: In stock
+MINIMUM_ORDER_QUANTITY: 10 packs
+LOT_NUMBERS: TYL22A456, TYL22B789
+EXPIRATION_DATES: 06/2025, 09/2025
+NDC_CODE: 50580-449-20
+CONTROLLED_SUBSTANCE: No
+FREQUENTLY_ASKED_QUESTIONS:
+- Q: Is this the extra strength formula? A: Yes, 500mg is the extra strength formula.
+- Q: Are there any sugar-free options? A: No, this product contains small amounts of sorbitol.
+
+## Amoxicillin (Amoxil)
+PRODUCT_ID: 2
+GENERIC_NAME: Amoxicillin
+BRAND_NAME: Amoxil
+ACTIVE_INGREDIENTS: Amoxicillin trihydrate
+PHARMACOLOGICAL_CLASS: Penicillin antibiotic
+ATC_CODES: J01CA04
+INDICATIONS: Bacterial infections including respiratory tract infections, urinary tract infections, skin infections
+CONTRAINDICATIONS: Penicillin allergy, history of amoxicillin-associated cholestatic jaundice
+MECHANISM_OF_ACTION: Inhibits bacterial cell wall synthesis
+DOSAGE_FORM: Capsule
+STRENGTH: 500 mg
+ROUTE_OF_ADMINISTRATION: Oral
+PACKAGING: Bottle of 20 capsules
+SYNONYMS: Amox
+DESCRIPTION: Red and yellow capsule for treating bacterial infections
+MANUFACTURER: GlaxoSmithKline
+STORAGE_CONDITIONS: Store below 25°C away from moisture
+PRICE_PER_UNIT: $0.45
+AVAILABILITY: In stock
+MINIMUM_ORDER_QUANTITY: 5 bottles
+LOT_NUMBERS: AMX21C345, AMX21D678
+EXPIRATION_DATES: 05/2025, 08/2025
+NDC_CODE: 43063-180-20
+CONTROLLED_SUBSTANCE: No
+FREQUENTLY_ASKED_QUESTIONS:
+- Q: Is this available in suspension form? A: Yes, but it's currently backordered.
+- Q: Does this require refrigeration? A: No, but should be stored in a cool, dry place.
+
+## Losartan (Cozaar)
+PRODUCT_ID: 3
+GENERIC_NAME: Losartan
+BRAND_NAME: Cozaar
+ACTIVE_INGREDIENTS: Losartan potassium
+PHARMACOLOGICAL_CLASS: Angiotensin II receptor blocker
+ATC_CODES: C09CA01
+INDICATIONS: Hypertension, diabetic nephropathy, left ventricular hypertrophy
+CONTRAINDICATIONS: Pregnancy, concomitant use with aliskiren in patients with diabetes
+MECHANISM_OF_ACTION: Blocks the binding of angiotensin II to AT1 receptors
+DOSAGE_FORM: Tablet
+STRENGTH: 50 mg
+ROUTE_OF_ADMINISTRATION: Oral
+PACKAGING: Blister pack of 30 tablets
+SYNONYMS: Losartan potassium
+DESCRIPTION: White, oval tablet for blood pressure control
+MANUFACTURER: Merck
+STORAGE_CONDITIONS: Store at room temperature
+PRICE_PER_UNIT: $0.80
+AVAILABILITY: In stock
+MINIMUM_ORDER_QUANTITY: 5 packs
+LOT_NUMBERS: CZR22F123, CZR22G456
+EXPIRATION_DATES: 04/2025, 07/2025
+NDC_CODE: 0006-0952-54
+CONTROLLED_SUBSTANCE: No
+FREQUENTLY_ASKED_QUESTIONS:
+- Q: Are there any drug interactions to be particularly aware of? A: Yes, interactions with NSAIDs and potassium supplements.
+- Q: Is this available in other strengths? A: Yes, we also stock 25mg and 100mg tablets.
+
+## Ibuprofen (Advil)
+PRODUCT_ID: 4
+GENERIC_NAME: Ibuprofen
+BRAND_NAME: Advil
+ACTIVE_INGREDIENTS: Ibuprofen
+PHARMACOLOGICAL_CLASS: NSAID
+ATC_CODES: M01AE01
+INDICATIONS: Pain, inflammation, fever, dysmenorrhea
+CONTRAINDICATIONS: Peptic ulcer, severe heart failure, third trimester of pregnancy
+MECHANISM_OF_ACTION: Inhibits cyclooxygenase enzymes COX-1 and COX-2
+DOSAGE_FORM: Tablet
+STRENGTH: 400 mg
+ROUTE_OF_ADMINISTRATION: Oral
+PACKAGING: Bottle of 24 tablets
+SYNONYMS: Ibu
+DESCRIPTION: Brown, round, film-coated tablet for pain and inflammation
+MANUFACTURER: Pfizer
+STORAGE_CONDITIONS: Store below 25°C
+PRICE_PER_UNIT: $0.25
+AVAILABILITY: In stock
+MINIMUM_ORDER_QUANTITY: 10 bottles
+LOT_NUMBERS: ADV21H789, ADV21I012
+EXPIRATION_DATES: 03/2025, 06/2025
+NDC_CODE: 0573-0145-24
+CONTROLLED_SUBSTANCE: No
+FREQUENTLY_ASKED_QUESTIONS:
+- Q: Is this coated to prevent stomach upset? A: Yes, these are film-coated tablets.
+- Q: Can this be taken with Tylenol? A: Yes, they can be taken together as they work differently.
+
+## Metformin (Glucophage)
+PRODUCT_ID: 5
+GENERIC_NAME: Metformin
+BRAND_NAME: Glucophage
+ACTIVE_INGREDIENTS: Metformin hydrochloride
+PHARMACOLOGICAL_CLASS: Biguanide antidiabetic
+ATC_CODES: A10BA02
+INDICATIONS: Type 2 diabetes, polycystic ovary syndrome
+CONTRAINDICATIONS: Renal impairment, metabolic acidosis, hypersensitivity to metformin
+MECHANISM_OF_ACTION: Decreases hepatic glucose production and improves insulin sensitivity
+DOSAGE_FORM: Tablet
+STRENGTH: 850 mg
+ROUTE_OF_ADMINISTRATION: Oral
+PACKAGING: Blister pack of 60 tablets
+SYNONYMS: Metformin HCl
+DESCRIPTION: White, round tablet for controlling blood glucose levels
+MANUFACTURER: Merck
+STORAGE_CONDITIONS: Store at room temperature
+PRICE_PER_UNIT: $0.30
+AVAILABILITY: In stock
+MINIMUM_ORDER_QUANTITY: 5 packs
+LOT_NUMBERS: GLU22J345, GLU22K678
+EXPIRATION_DATES: 05/2025, 08/2025
+NDC_CODE: 0087-6070-10
+CONTROLLED_SUBSTANCE: No
+FREQUENTLY_ASKED_QUESTIONS:
+- Q: Is this available as extended-release? A: No, we only stock the immediate-release version.
+- Q: What are the common side effects? A: Gastrointestinal disturbances, including diarrhea, nausea, and abdominal discomfort.
+
+
+# Ordering Information
+
+## Order Policies
+MINIMUM_ORDER: $100
+DELIVERY_TIME: 2-3 business days (standard), 24 hours (expedited)
+PAYMENT_TERMS: Net 30 days for established accounts
+RETURNS_POLICY: Returns accepted within 14 days for products in original packaging
+VOLUME_DISCOUNTS: 5% for orders over $1,000, 10% for orders over $5,000
+
+## Bulk Ordering
+For bulk orders, please contact our dedicated bulk order specialist at bulk@medipharma.example.com or call +1-555-789-0123. Bulk orders typically qualify for additional discounts beyond our standard volume discounts.
+
+## Controlled Substances
+For orders containing controlled substances, please note the following requirements:
+- Valid DEA registration must be on file
+- DEA Form 222 required for Schedule II substances
+- Electronic ordering available for Schedule III-V substances
+- Specific storage and handling requirements apply
+- All controlled substance orders ship separately
+
+## Returns and Credits
+RETURN AUTHORIZATION: All returns require a Return Authorization (RA) number
+ELIGIBLE ITEMS: Unopened, undamaged products in original packaging
+RETURN WINDOW: Within 14 days of receipt
+CREDIT PROCESSING: Credits processed within 10 business days of return receipt
+DAMAGED GOODS: Report within 48 hours of delivery with photos
+RECALLED PRODUCTS: Separate procedure, contact compliance@medipharma.example.com
+
+# Special Programs
+
+## Price Match Guarantee
+We offer a price match guarantee on identical products from other authorized distributors. To request a price match:
+1. Submit the competitor's current quote or invoice
+2. Include your account information and the product details
+3. Email to pricematch@medipharma.example.com
+4. Allow 1-2 business days for review and response
+
+## Pharmacy Loyalty Program
+Our pharmacy loyalty program offers additional benefits:
+- TIER 1 (Annual purchases $10,000-$50,000): 2% rebate, free standard shipping
+- TIER 2 (Annual purchases $50,001-$100,000): 3% rebate, free expedited shipping
+- TIER 3 (Annual purchases $100,001+): 5% rebate, free expedited shipping, dedicated account manager
+
+## Hospital Supply Program
+Designed specifically for hospitals and inpatient facilities:
+- Contract pricing on high-volume items
+- Automated inventory management integration
+- Emergency delivery service (24/7)
+- Quarterly usage reports and cost analysis
+
+# Quality and Compliance
+
+## Quality Assurance
+All products distributed by MediPharma Distribution are sourced directly from manufacturers or authorized trading partners. Our quality assurance program includes:
+- Verification of pedigree documentation
+- Temperature and humidity monitoring during storage and transit
+- Regular facility inspections
+- Product authenticity verification
+- Lot number and expiration date tracking
+
+## Regulatory Compliance
+We adhere to all federal and state regulations governing pharmaceutical distribution:
+- FDA registered facility
+- Licensed in all states where we distribute
+- DSCSA compliant
+- DEA compliant for controlled substances
+- Annual third-party compliance audits
+
+## Storage and Handling
+Our facility maintains the following storage conditions:
+- Controlled room temperature (20-25°C)
+- Refrigerated storage (2-8°C)
+- Frozen storage (-20°C)
+- Low humidity environment
+- 24/7 temperature monitoring with alert system
+- Backup power generators
+
+# Frequently Asked Questions
+
+## Ordering Questions
+Q: What information do I need to provide when placing an order?
+A: You need your organization details, purchase order number, contact person, shipping address, product details, and requested delivery date.
+
+Q: How do I check the status of my order?
+A: You can check your order status by purchase order number from the order confirmation you will receive.
+
+Q: Can I modify an order after it's been placed?
+A: Orders can be modified if they haven't entered the fulfillment process. Contact customer service immediately with your request.
+
+## Product Questions
+
+Q: Do you provide certificates of analysis?
+A: Yes, certificates of analysis are available upon request for most products.
+
+Q: How do you handle drug shortages?
+A: We communicate shortage information promptly and offer alternative products when available.
+
+## Shipping and Delivery
+Q: Do you ship to all 50 states?
+A: We currently ship to the Northeast, Mid-Atlantic, parts of the Midwest, and select Southeast states. See "Service Areas" for details.
+
+Q: What are your shipping cutoff times?
+A: Orders placed before 2:00 PM ET are processed the same business day.
+
+Q: How are temperature-sensitive products shipped?
+A: Temperature-sensitive products are shipped with appropriate cold chain packaging and temperature monitors.

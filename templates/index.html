@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PharmaDist Chatbot</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Force hide scrollbars for all major browsers */
+        * {
+            -ms-overflow-style: none !important;  /* IE and Edge */
+            scrollbar-width: none !important;  /* Firefox */
+        }
+
+        /* Hide webkit scrollbars (Chrome, Safari, newer Edge) */
+        *::-webkit-scrollbar {
+            display: none !important;
+            width: 0px !important;
+            background: transparent !important;
+        }
+
+        /* Specific targeting for message container */
+        .messages-container {
+            -ms-overflow-style: none !important;
+            scrollbar-width: none !important;
+            overflow-y: scroll !important;  /* Still allow scrolling */
+        }
+
+        .messages-container::-webkit-scrollbar {
+            display: none !important;
+            width: 0 !important;
+            height: 0 !important;
+        }
+        :root {
+            --background-color: #0a0a0a;
+            --text-color: #f1f1f1;
+            --secondary-color: #1f1f1f;
+            --border-color: #333333;
+            --highlight-color: #2a2a2a;
+            --accent-color: #10a37f;
+            --error-color: #ff4a4a;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .logo {
+            font-weight: bold;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .logo i {
+            color: var(--accent-color);
+        }
+        
+        .header-actions {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .header-button {
+            background: none;
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .header-button:hover {
+            background-color: var(--highlight-color);
+        }
+        
+        .chat-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            max-width: 900px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 20px;
+            overflow: hidden;
+        }
+        
+        .messages-container {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px 0;
+        }
+        
+        .message {
+            display: flex;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        
+        .message-content {
+            max-width: 90%;
+        }
+        
+        .message-user {
+            justify-content: flex-end;
+        }
+        
+        .message-ai {
+            justify-content: flex-start;
+        }
+        
+        .message-bubble {
+            padding: 12px 18px;
+            border-radius: 18px;
+            font-size: 16px;
+            max-width: 100%;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+        
+        .user-bubble {
+            background-color: var(--accent-color);
+            color: white;
+            border-top-right-radius: 4px;
+        }
+        
+        .ai-bubble {
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            border-top-left-radius: 4px;
+        }
+        
+        .message-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: var(--secondary-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 10px;
+        }
+        
+        .ai-avatar {
+            background-color: var(--accent-color);
+            color: white;
+        }
+        
+        .user-avatar {
+            background-color: #3b82f6;
+            color: white;
+        }
+        
+        .message-timestamp {
+            font-size: 11px;
+            color: #888;
+            margin-top: 5px;
+            text-align: right;
+        }
+        
+        .input-container {
+            margin: 20px 0;
+            position: relative;
+        }
+        
+        .message-input {
+            width: 100%;
+            padding: 16px;
+            padding-right: 50px;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            resize: none;
+            font-size: 16px;
+            line-height: 1.5;
+            outline: none;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+            min-height: 60px;
+            max-height: 200px;
+        }
+        
+        .message-input:focus {
+            border-color: var(--accent-color);
+        }
+        
+        .send-button {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+        }
+        
+        .send-button:disabled {
+            background-color: var(--border-color);
+            cursor: not-allowed;
+        }
+        
+        .loading-indicator {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+        }
+        
+        .typing-indicator {
+            display: flex;
+            align-items: center;
+            padding: 12px 18px;
+            border-radius: 18px;
+            font-size: 16px;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            border-top-left-radius: 4px;
+            margin-left: 56px;
+        }
+        
+        .typing-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #c0c0c0;
+            border-radius: 50%;
+            margin: 0 3px;
+            animation: typing-animation 1.4s infinite;
+        }
+        
+        .typing-dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        
+        .typing-dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+        
+        @keyframes typing-animation {
+            0%, 60%, 100% { transform: translateY(0); }
+            30% { transform: translateY(-6px); }
+        }
+        
+        .welcome-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-top: 50px;
+            padding: 0 20px;
+        }
+        
+        .welcome-title {
+            font-size: 32px;
+            margin-bottom: 15px;
+            color: var(--text-color);
+        }
+        
+        .welcome-subtitle {
+            font-size: 18px;
+            margin-bottom: 40px;
+            color: #9ca3af;
+        }
+        
+        .examples-container {
+            width: 100%;
+            max-width: 600px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        
+        .example-card {
+            background-color: var(--secondary-color);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 15px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            text-align: left;
+        }
+        
+        .example-card:hover {
+            background-color: var(--highlight-color);
+        }
+        
+        .example-title {
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: var(--text-color);
+        }
+        
+        .example-description {
+            color: #9ca3af;
+            font-size: 14px;
+        }
+        
+        .error {
+            color: var(--error-color);
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .examples-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .message-bubble {
+                max-width: 280px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <i class="fas fa-capsules"></i>
+            <span>PharmaDist</span>
+        </div>
+        <div class="header-actions">
+            <button id="reset-chat" class="header-button">
+                <i class="fas fa-redo-alt"></i>
+                <span>Reset Chat</span>
+            </button>
+        </div>
+    </header>
+    
+    <div class="chat-container">
+        <div id="welcome-screen" class="welcome-container">
+            <h1 class="welcome-title">PharmaDist Assistant</h1>
+            <p class="welcome-subtitle">Your pharmaceutical distribution partner</p>
+            
+            <div class="examples-container">
+                <div class="example-card" data-example="Tell me about paracetamol products available">
+                    <div class="example-title">Product Information</div>
+                    <div class="example-description">Tell me about paracetamol products available</div>
+                </div>
+                <div class="example-card" data-example="I want to place an order for antibiotics">
+                    <div class="example-title">Order Placement</div>
+                    <div class="example-description">I want to place an order for antibiotics</div>
+                </div>
+                <div class="example-card" data-example="I need to check my order status">
+                    <div class="example-title">Order Status</div>
+                    <div class="example-description">I need to check my order status</div>
+                </div>
+                <div class="example-card" data-example="I want to cancel my recent order">
+                    <div class="example-title">Order Cancellation</div>
+                    <div class="example-description">I want to cancel my recent order</div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="messages-screen" class="messages-container" style="display: none;"></div>
+        
+        <div id="typing-indicator" class="typing-indicator" style="display: none;">
+            <span class="typing-dot"></span>
+            <span class="typing-dot"></span>
+            <span class="typing-dot"></span>
+        </div>
+        
+        <div class="input-container">
+            <textarea id="message-input" class="message-input" placeholder="Type your message here..." rows="1"></textarea>
+            <button id="send-button" class="send-button" disabled>
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const messageInput = document.getElementById('message-input');
+            const sendButton = document.getElementById('send-button');
+            const messagesContainer = document.getElementById('messages-screen');
+            const welcomeScreen = document.getElementById('welcome-screen');
+            const typingIndicator = document.getElementById('typing-indicator');
+            const resetButton = document.getElementById('reset-chat');
+            const exampleCards = document.querySelectorAll('.example-card');
+            
+            let chatStarted = false;
+            
+            // Auto-resize the textarea as user types
+            messageInput.addEventListener('input', function() {
+                this.style.height = 'auto';
+                this.style.height = (this.scrollHeight) + 'px';
+                
+                // Enable or disable send button based on input
+                sendButton.disabled = this.value.trim() === '';
+            });
+            
+            // Handle Enter key to send message (but allow Shift+Enter for new line)
+            messageInput.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' && !e.shiftKey) {
+                    e.preventDefault();
+                    if (!sendButton.disabled) {
+                        sendMessage();
+                    }
+                }
+            });
+            
+            // Send message button click handler
+            sendButton.addEventListener('click', sendMessage);
+            
+            // Reset chat button click handler
+            resetButton.addEventListener('click', resetChat);
+            
+            // Example cards click handler
+            exampleCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    const exampleText = this.getAttribute('data-example');
+                    messageInput.value = exampleText;
+                    messageInput.style.height = 'auto';
+                    messageInput.style.height = (messageInput.scrollHeight) + 'px';
+                    sendButton.disabled = false;
+                    sendMessage();
+                });
+            });
+            
+            // Function to send a message
+            function sendMessage() {
+                const message = messageInput.value.trim();
+                if (message === '') return;
+                
+                // Start chat if this is the first message
+                if (!chatStarted) {
+                    startChat();
+                }
+                
+                // Add user message to UI
+                addMessage(message, 'user');
+                
+                // Clear input and reset height
+                messageInput.value = '';
+                messageInput.style.height = 'auto';
+                sendButton.disabled = true;
+                
+                // Show typing indicator
+                typingIndicator.style.display = 'flex';
+                
+                // Scroll to bottom
+                scrollToBottom();
+                
+                // Send to backend
+                fetch('/api/chat', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ message: message })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    // Hide typing indicator
+                    typingIndicator.style.display = 'none';
+                    
+                    // Add AI response to UI
+                    addMessage(data.message, 'ai', data.timestamp, data.error);
+                    
+                    // Scroll to bottom
+                    scrollToBottom();
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    typingIndicator.style.display = 'none';
+                    addMessage('Sorry, there was an error processing your request. Please try again.', 'ai', null, true);
+                    scrollToBottom();
+                });
+            }
+            
+            // Function to add a message to the UI
+            function addMessage(text, sender, timestamp = null, isError = false) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `message message-${sender}`;
+                
+                const currentTime = timestamp || new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+                
+                // Handle markdown-like formatting for code blocks
+                let formattedText = text;
+                if (sender === 'ai') {
+                    // Replace code blocks with styled versions
+                    formattedText = text.replace(/```([a-z]*)\n([\s\S]*?)```/g, function(match, language, code) {
+                        return `<pre style="background-color: #1a1a1a; padding: 10px; border-radius: 4px; overflow-x: auto; margin: 10px 0;"><code>${code.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</code></pre>`;
+                    });
+                    
+                    // Replace single line code with styled version
+                    formattedText = formattedText.replace(/`([^`]+)`/g, '<code style="background-color: #1a1a1a; padding: 2px 4px; border-radius: 3px;">$1</code>');
+                    
+                    // Add line breaks
+                    formattedText = formattedText.replace(/\n/g, '<br>');
+                }
+                
+                if (sender === 'user') {
+                    messageDiv.innerHTML = `
+                        <div class="message-avatar user-avatar"><i class="fas fa-user"></i></div>
+                        <div class="message-content">
+                            <div class="message-bubble user-bubble">${text}</div>
+                            <div class="message-timestamp">${currentTime}</div>
+                        </div>
+                    `;
+                } else {
+                    messageDiv.innerHTML = `
+                        <div class="message-avatar ai-avatar"><i class="fas fa-robot"></i></div>
+                        <div class="message-content">
+                            <div class="message-bubble ai-bubble ${isError ? 'error' : ''}">${formattedText}</div>
+                            <div class="message-timestamp">${currentTime}</div>
+                        </div>
+                    `;
+                }
+                
+                messagesContainer.appendChild(messageDiv);
+            }
+            
+            // Function to start the chat (hide welcome screen, show messages)
+            function startChat() {
+                welcomeScreen.style.display = 'none';
+                messagesContainer.style.display = 'block';
+                chatStarted = true;
+                
+                // Add the welcome message as the first AI message
+                addMessage(`Welcome to PharmaDist, your pharmaceutical distribution partner!
+
+I can help you with:
+1. Information about our pharmaceutical products and services
+2. Placing or canceling orders
+
+How can I assist you today?`, 'ai');
+            }
+            
+            // Function to reset the chat
+            function resetChat() {
+                // Call the reset API endpoint
+                fetch('/api/reset', {
+                    method: 'POST'
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        // Clear the messages UI
+                        messagesContainer.innerHTML = '';
+                        
+                        // Show welcome screen again
+                        welcomeScreen.style.display = 'flex';
+                        messagesContainer.style.display = 'none';
+                        typingIndicator.style.display = 'none';
+                        
+                        // Reset chat state
+                        chatStarted = false;
+                    }
+                })
+                .catch(error => {
+                    console.error('Error resetting chat:', error);
+                });
+            }
+            
+            // Function to scroll to the bottom of the messages container
+            function scrollToBottom() {
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            }
+        });
+    </script>
+</body>
+</html>
