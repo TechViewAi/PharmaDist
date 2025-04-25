@@ -1,0 +1,21 @@
+# Core dependencies
+flask==2.3.3
+python-dotenv==1.0.0
+
+# Database
+psycopg2-binary==2.9.9
+
+# LangChain and related dependencies
+langchain==0.1.4
+langchain-core==0.1.18
+langchain-google-genai==0.0.7
+langchain-chroma==0.0.6
+
+# Vector database
+chromadb==0.4.22
+
+# Embeddings and models
+google-generativeai==0.3.2
+
+# Utils
+pydantic==2.5.2
